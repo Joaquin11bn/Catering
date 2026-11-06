@@ -5,6 +5,10 @@
 **Duración:** 2 horas
 **Lenguaje:** Java 21 + JUnit 5
 
+NOMBRE: NOGUERA, JOAQUIN
+COMISION: 6
+DNI: 45001677
+
 ---
 
 ## 🎯 Objetivo
