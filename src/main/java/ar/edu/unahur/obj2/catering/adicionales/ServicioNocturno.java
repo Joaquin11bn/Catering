@@ -12,9 +12,4 @@ public class ServicioNocturno extends Adicional {
         return propuesta.precio() * 1.2;
     }
 
-    @Override  
-    public String nombre() {
-        return "Servicio Nocturno";
-    }
-
 }

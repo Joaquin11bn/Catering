@@ -16,9 +16,9 @@ public class AgregarPropuesta implements Modificador{
 
     @Override 
     public void modificar() throws PropuestaNoIncluidaException {
-        if (menu.incluyePropuesta(propuesta.nombre())) {
+        /*if (menu.incluyePropuesta(propuesta.nombre())) {
             throw new PropuestaNoIncluidaException("La propuesta ya está incluida en el menú.");
-        }
+        }*/
         menu.agregarPropuesta(propuesta);
     }
     @Override 

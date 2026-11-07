@@ -12,9 +12,6 @@ public class MozosAdicional extends Adicional{
         return propuesta.precio() + 18000.0;
     }
 
-    @Override
-    public String nombre() {
-        return "Mozos Adicionales";
-    }
+
 
 }

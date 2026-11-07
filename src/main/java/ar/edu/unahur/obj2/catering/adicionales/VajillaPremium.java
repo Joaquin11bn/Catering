@@ -12,9 +12,4 @@ public class VajillaPremium extends Adicional {
         return propuesta.precio() + 12000.0;
     }
 
-    @Override
-    public String nombre() {
-        return "Vajilla Premium";
-    }
-
 }

@@ -4,8 +4,16 @@ import ar.edu.unahur.obj2.catering.Propuesta;
 
 public abstract class Adicional implements Propuesta {
     protected final Propuesta propuesta;
-    protected Adicional(Propuesta propuesta, String nombre) {
+    private final String nombreAdicional;
+
+    protected Adicional(Propuesta propuesta, String nombreAdicional) {
         this.propuesta = propuesta;
+        this.nombreAdicional = nombreAdicional;
+    }
+
+    @Override
+    public String nombre() {
+        return propuesta.nombre() + " + " + nombreAdicional;
     }
 
     @Override
