@@ -3,6 +3,9 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
 
+import ar.edu.unahur.obj2.catering.excepcions.NadaParaRevertirException;
+import ar.edu.unahur.obj2.catering.excepcions.PropuestaNoIncluidaException;
+
 
 public class Gestor {
     private final Deque<Modificador> historial = new ArrayDeque<>();
@@ -19,10 +22,17 @@ public class Gestor {
             carta.modificar();
             aplicadas.push(carta);
         }
-    } catch (PropuestaNoIncluidaException e) {
+    } catch (PropuestaNoIncluidaException | RuntimeException errorFatal) {
         while (!aplicadas.isEmpty()) aplicadas.pop().deshacer();
-        throw new PropuestaNoIncluidaException("Error al aplicar el lote de modificaciones. Se deshicieron los cambios realizados.");
+        throw errorFatal;
     }
     lote.forEach(historial::push);
+    }
+
+    public void deshacer() throws NadaParaRevertirException, PropuestaNoIncluidaException {
+        if (historial.isEmpty()) {
+            throw new NadaParaRevertirException();
+        }
+        historial.pop().deshacer();
     }
 }

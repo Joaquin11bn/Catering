@@ -2,19 +2,22 @@ package ar.edu.unahur.obj2.catering;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unahur.obj2.catering.excepcions.DescuentoInvalidoException;
+import ar.edu.unahur.obj2.catering.excepcions.PropuestaNoIncluidaException;
+
 public class Menu implements Propuesta {
     private final String nombre;
     private final Integer descuento;
     private final List<Propuesta> contienePropuestas = new ArrayList<>();
 
 
-
-    public Menu(String nombre, Double precio, Integer descuento) {
+    public Menu(String nombre, Integer descuento, Propuesta... contienePropuestas) {
         if (descuento < 0 || descuento > 100) {
             throw new DescuentoInvalidoException((double) descuento);
         }
         this.nombre = nombre;
         this.descuento = descuento;
+        this.contienePropuestas.addAll(List.of(contienePropuestas));
     }
 
 
@@ -49,9 +52,7 @@ public class Menu implements Propuesta {
 
     @Override
     public Boolean incluyePropuesta(String nombre) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'incluyePropuesta'");
+        return contienePropuestas.stream().anyMatch(propuesta -> propuesta.incluyePropuesta(nombre));
     }
-
 }
 

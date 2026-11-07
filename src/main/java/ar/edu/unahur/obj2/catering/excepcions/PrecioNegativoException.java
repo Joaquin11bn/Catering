@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.catering;
+package ar.edu.unahur.obj2.catering.excepcions;
 
 public class PrecioNegativoException extends RuntimeException {
     public PrecioNegativoException(Double precio) {

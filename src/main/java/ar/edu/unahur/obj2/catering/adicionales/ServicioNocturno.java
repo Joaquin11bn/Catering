@@ -1,4 +1,6 @@
-package ar.edu.unahur.obj2.catering;
+package ar.edu.unahur.obj2.catering.adicionales;
+
+import ar.edu.unahur.obj2.catering.Propuesta;
 
 public class ServicioNocturno extends Adicional {
     public ServicioNocturno(Propuesta propuesta) {

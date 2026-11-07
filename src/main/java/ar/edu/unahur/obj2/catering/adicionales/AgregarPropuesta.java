@@ -1,4 +1,9 @@
-package ar.edu.unahur.obj2.catering;
+package ar.edu.unahur.obj2.catering.adicionales;
+
+import ar.edu.unahur.obj2.catering.Menu;
+import ar.edu.unahur.obj2.catering.Modificador;
+import ar.edu.unahur.obj2.catering.Propuesta;
+import ar.edu.unahur.obj2.catering.excepcions.PropuestaNoIncluidaException;
 
 public class AgregarPropuesta implements Modificador{
     private final Menu menu;

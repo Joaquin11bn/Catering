@@ -1,4 +1,7 @@
 package ar.edu.unahur.obj2.catering;
+
+import ar.edu.unahur.obj2.catering.excepcions.PrecioNegativoException;
+
 public class Servicio implements Propuesta {
     private String nombre;
     private Double precio;
@@ -34,13 +37,12 @@ public class Servicio implements Propuesta {
 
     @Override
     public Integer cantidadDeServicios() {
-        return cantidadDeServicios();
+        return 1;
     }
 
     @Override
     public Boolean incluyePropuesta(String nombre) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'incluyePropuesta'");
+        return this.nombre.equals(nombre);
     }
 
 }
